@@ -1,0 +1,131 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Prepare Environment",
+				"command": "nvm",
+				"type": "shell",
+				"args": [
+					"use",
+					"22"
+				],
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "build"
+			},
+			{
+				"label": "Build for Production",
+				"command": "npm run build",
+				"type": "process",
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "build",
+				"dependsOn": [
+					"Prepare Environment"
+				]
+			},
+			{
+				"label": "Clean Production",
+				"command": "npm",
+				"type": "shell",
+				"args": [
+					"run",
+					"clean"
+				],
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "silent"
+				},
+				"group": "build",
+				"dependsOn": [
+					"Prepare Environment"
+				]
+			},
+			{
+				"label": "Run Production",
+				"command": "npm",
+				"type": "shell",
+				"args": [
+					"run",
+					"start"
+				],
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "none",
+				"dependsOn": [
+					"Prepare Environment"
+				]
+			},
+			{
+				"label": "Test",
+				"command": "npm",
+				"type": "shell",
+				"args": [
+					"test"
+				],
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "build",
+				"dependsOn": [
+					"Prepare Environment"
+				]
+			},
+			{
+				"label": "Run Development",
+				"command": "npm",
+				"type": "shell",
+				"args": [
+					"run",
+					"dev"
+				],
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "none",
+				"dependsOn": [
+					"Prepare Environment"
+				]
+			}
+		]
+	},
+	"settings": {
+		"editor.tabSize": 4,
+		"editor.codeActionsOnSave": {
+		  "source.fixAll.eslint":"always"
+		},
+		"eslint.validate": [
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact"
+		]
+	  }
+	  
+}

@@ -1,0 +1,46 @@
+{
+  "name": "tp-cuatrimestral-jueves-manana-ju-ma-grupo-06",
+  "version": "1.0.0",
+  "description": "TP cuatrimestral de Desarrollo de Software - grupo 6",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "testDist": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" npx jest dist/",
+    "clean": "tsc --build --clean",
+    "build": "tsc --build --force ",
+    "test": "npm run build && npm run testDist",
+    "start": "node dist/src/index.js",
+    "dev": "tsx watch src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddso-utn/tp-cuatrimestral-jueves-manana-ju-ma-grupo-06.git"
+  },
+  "author": "grupo-06",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddso-utn/tp-cuatrimestral-jueves-manana-ju-ma-grupo-06/issues"
+  },
+  "homepage": "https://github.com/ddso-utn/tp-cuatrimestral-jueves-manana-ju-ma-grupo-06#readme",
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.25.1",
+    "@types/express": "^5.0.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.3",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.3.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  }
+}

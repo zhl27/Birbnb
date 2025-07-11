@@ -1,0 +1,61 @@
+import { expect, test, describe, beforeEach } from "@jest/globals";
+import { FactoryNotificacion } from "../../domain/Notificacion.js";
+import { EstadoReserva } from "../../domain/Reserva.js";
+
+// domain/Notificacion.test.js
+
+describe("FactoryNotificacion", () => {
+	let mockReserva, mockAnfitrion, mockHuesped, mockAlojamiento;
+
+	beforeEach(() => {
+		mockAnfitrion = { nombre: "Anfitrion 1" };
+		anfitrion = { nombre: "Anfitrion 1", email: "" };
+		mockHuesped = { nombre: "Huesped 1" };
+		mockAlojamiento = { anfitrion: mockAnfitrion };
+		mockReserva = {
+			estado: null,
+			alojamiento: mockAlojamiento,
+			huespedReservador: mockHuesped,
+			rangoFechas: { fechaInicio: "2025-10-01", fechaFin: "2025-10-05" }
+		};
+	});
+
+	test("should create a notification for CANCELADA state", () => {
+		mockReserva.estado = EstadoReserva.CANCELADA;
+		const notificacion = FactoryNotificacion.crearSegunReserva(
+			mockReserva,
+			"Me arrepentí"
+		);
+
+		const mensaje = JSON.parse(notificacion.mensaje);
+		expect(mensaje.estado).toBe(EstadoReserva.CANCELADA);
+		expect(mensaje.saludo).toContain(mockAnfitrion.nombre);
+	});
+
+	test("should create a notification for CONFIRMADA state", () => {
+		mockReserva.estado = EstadoReserva.CONFIRMADA;
+		const notificacion = FactoryNotificacion.crearSegunReserva(mockReserva);
+
+		const mensaje = JSON.parse(notificacion.mensaje);
+		expect(mensaje.estado).toBe(EstadoReserva.CONFIRMADA);
+		expect(mensaje.saludo).toContain(mockHuesped.nombre);
+	});
+
+	test("should create a notification for PENDIENTE state", () => {
+		mockReserva.estado = EstadoReserva.PENDIENTE;
+		const notificacion = FactoryNotificacion.crearSegunReserva(mockReserva);
+
+		const mensaje = JSON.parse(notificacion.mensaje);
+		expect(mensaje.estado).toBe(EstadoReserva.PENDIENTE);
+		expect(mensaje.saludo).toContain(mockAnfitrion.nombre);
+		expect(mensaje.diaCheckIn).toBe("2025-10-01");
+		expect(mensaje.diaCheckOut).toBe("2025-10-05");
+	});
+
+	test("should return undefined for an unknown state", () => {
+		mockReserva.estado = "UNKNOWN_STATE";
+		const notificacion = FactoryNotificacion.crearSegunReserva(mockReserva);
+
+		expect(notificacion).toBeUndefined();
+	});
+});
