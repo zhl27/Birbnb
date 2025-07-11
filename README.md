@@ -1,5 +1,7 @@
 node v22.14.0
 
+Este repositorio comenzó como un TP grupal para la materia Desarrollo de Software, y ahora continuará como un proyecto personal de aprendizaje.
+
 # Enunciado del TP
 
 https://docs.google.com/document/d/1K0WJdOpcng4Jy-1PgIMz7CTtACT4HPSiiFB3IuM3l3o/edit?tab=t.0#heading=h.zho8hjgki4ue
