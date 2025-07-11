@@ -1,6 +1,8 @@
 node v22.14.0
 
-Este repositorio comenzó como un TP grupal para la materia Desarrollo de Software, y ahora continuará como un proyecto personal de aprendizaje.
+Este repositorio comenzó como un TP grupal para la materia Desarrollo de Software, y ahora continuará como un proyecto personal de aprendizaje. 
+
+El repositorio original utilizado para el TP grupal: https://github.com/ddso-utn/tp-cuatrimestral-jueves-manana-ju-ma-grupo-06.git
 
 # Enunciado del TP
 
