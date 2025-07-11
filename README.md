@@ -4,10 +4,8 @@ node v22.14.0
 
 https://docs.google.com/document/d/1K0WJdOpcng4Jy-1PgIMz7CTtACT4HPSiiFB3IuM3l3o/edit?tab=t.0#heading=h.zho8hjgki4ue
 
-# Recursos para aprender typescript
+# Sobre typescript
 - https://www.typescriptlang.org/docs/
-
-# Recursos utilizados para la migración a typescript
 - https://lasse-skaalum.medium.com/migrating-a-javascript-node-js-project-to-typescript-step-by-step-guide-8279b065d4e
 - https://www.typescriptlang.org/download/
 - https://nodejs.org/api/typescript.html#type-stripping
@@ -18,7 +16,7 @@ https://docs.google.com/document/d/1K0WJdOpcng4Jy-1PgIMz7CTtACT4HPSiiFB3IuM3l3o/
 - https://eslint.org/docs/latest/rules/no-case-declarations
 - https://nodejs.org/en/learn/typescript/run-natively
 
-# Comandos importantes de desarrollo
+# Comandos importantes
 - `npm run build` --> Compila los .ts a .js
 - `npm run clean` --> Limpia el dist/
 - `npm run start` --> Ejecuta la version compilada del index.ts
@@ -87,4 +85,4 @@ feat(auth): agregar soporte para OAuth2
 - **test:** Agrega o actualiza pruebas.
  
 - **chore:** Actualizaciones en tareas de construcción o dependencias 
-# Birbnb
+
